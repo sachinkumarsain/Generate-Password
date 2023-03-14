@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let obj = {
+            name: "sachin   ",
+            age: 25,
+            phone: 1234567980
+        }
+
+        let reversedEntries = Object.entries(obj).reverse();
+        console.log(reversedEntries)
+        for (let [key, value] of reversedEntries) {
+            console.log(`${key}: ${value}`);
+            document.write(`${key}: ${value}`+"<br>");
+        }
+        // print this value:-
+        // phone:-1234567890
+        // age:-25
+        // name:-sachin
+        // for(let x in obj){
+        //     document.
+        // }
+        // let new_obj = {}
+        // function dict_reverse(obj) {
+
+        //     rev_obj = Object.keys(obj).reverse();
+        //     rev_obj.forEach(function (i) {
+        //         new_obj[i] = obj[i];
+        //     })
+        //     return new_obj;
+        //     console.log(new_obj);
+        // }
+
+
+
+    </script>
+</body>
+
+</html>
