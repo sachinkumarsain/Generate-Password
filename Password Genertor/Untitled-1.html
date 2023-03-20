@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Genertor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="password.css">
+</head>
+
+<body>
+    <div class="wapper">
+        <div class="box">
+            <h1>Password Genertor</h1>
+            <div class="first"><i class="fa-regular fa-paste"></i></div>
+            <!-- <input class="frist" type="text"></i><br> -->
+            <label for="">Password Length</label>
+            <input class="second" type="number"><br>
+
+            <label for="">Add UpperCase Letter</label>
+            <input type="checkbox" id="uppercase"><br>
+
+            <input type="number"  id="uppercaseCount">
+
+            <label for="">Add Lowercase Letter</label>
+            <input type="checkbox" id="lowercase"><br>
+
+            <input type="number" placeholder="How many lowercase alphabets" id="lowercaseCount">
+
+            <label for="">Include Number</label>
+            <input type="checkbox" id="numbers"><br>
+
+            <input type="number" placeholder="How many numbers" id="numberCount">
+
+
+            <label for="">Include Symbol</label>
+            <input type="checkbox" id="symbols"><br>
+
+            <input type="number" placeholder="How many symbols" id="symbolCount">
+
+            <button>Generate Password</button>
+        </div>
+    </div>
+
+
+
+    <script>
+        const uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        const lowercase = 'abcdefghijklmnopqsrtuvwxyz';
+        const number = "0123456789"
+        const symbols = "~!@#$%^&*()_+}.,/?><+_-*/"
+
+        let isuppercase = document.querySelector('#uppercase');
+        let passwordlength = document.querySelector('.second');
+        let islowercase = document.querySelector('#lowercase');
+        let isnumbers = document.querySelector('#numbers');
+        let issymbols = document.querySelector('#symbols');
+        let btn = document.querySelector('button')
+        btn.onclick = () => {
+            let output = '';
+            if (passwordlength.value.length === 0) {
+                alert('enter')
+            }
+            else {
+                if (!isuppercase.checked && !islowercase.checked && !isnumbers.checked &&
+                    !issymbols.checked) {
+                    alert("dsafgg");
+                    
+                }
+                else{
+                    let passwordtank=''
+                    if(isuppercase.checked){
+                        passwordtank+=uppercase
+                    }
+                    if(islowercase.checked){
+                        passwordtank+=lowercase
+                    }
+                    if(isnumbers.checked){
+                        passwordtank+=numbers
+                    }
+                    if(issymbols.checked){
+                        passwordtank+=symbols
+                    }
+
+                    for(let i=0;i<passwordlength.value;i++){
+                        output+=passwordtank[Math.floor(Math.random()*passwordtank.length)]
+                    }
+                    
+
+
+                }
+                document.querySelector('.frist').innerHTML=output
+            }
+        }
+
+
+
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>    

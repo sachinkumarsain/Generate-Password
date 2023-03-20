@@ -31,12 +31,14 @@
                 <label for="">Add UpperCase Letter</label>
                 <input type="checkbox" id="uppercase"><br>
 
-                <input type="number" placeholder="How many uppercase alphabets" id="uppercaseCount" class="hidden" min="0" max="15">
+                <input type="number" placeholder="How many uppercase alphabets" id="uppercaseCount" class="hidden"
+                    min="0" max="15">
 
                 <label for="">Add Lowercase Letter</label>
                 <input type="checkbox" id="lowercase"><br>
 
-                <input type="number" placeholder="How many lowercase alphabets" id="lowercaseCount" class="hidden"  min="0" max="15">
+                <input type="number" placeholder="How many lowercase alphabets" id="lowercaseCount" class="hidden"
+                    min="0" max="15">
 
                 <label for="">Include Number</label>
                 <input type="checkbox" id="numbers"><br>
@@ -47,7 +49,7 @@
                 <label for="">Include Symbol</label>
                 <input type="checkbox" id="symbols"><br>
 
-                <input type="number" placeholder="How many symbols" id="symbolCount" class="hidden"  min="0" max="15">
+                <input type="number" placeholder="How many symbols" id="symbolCount" class="hidden" min="0" max="15">
             </div>
             <div class="anchors">
                 <a class="generatepassword" href="">Generate Password <i class="fa-solid fa-hand-point-left"></i></a>
@@ -98,20 +100,22 @@
         let copyPassword = document.querySelector(".copyPassword");
         let finalpassword = document.querySelector('.finalpassword');
         let wapper2 = document.querySelector('.wapper2');
-       
+        let check = document.querySelectorAll('input')
 
-        copyPassword.onclick = () => {-
+
+        copyPassword.onclick = () => {
+            -
             navigator.clipboard.writeText(document.querySelector(".first").innerHTML)
         }
 
         isuppercase.onclick = () => {
             if (isuppercase.checked) {
                 uppercasecount.style.display = 'block'
-                uppercasecount.value=""
+                uppercasecount.value = ""
             }
             else {
                 uppercasecount.style.display = 'none'
-                
+
             }
         }
         islowercase.onclick = () => {
@@ -128,7 +132,7 @@
             }
             else {
                 numbercasecount.style.display = 'none'
-                
+
             }
         }
         issymbols.onclick = () => {
@@ -202,8 +206,8 @@
             }
 
         }
-        const delete1=document.querySelector(".anchors2 .delete")
-        const save1=document.querySelector('.anchors2 .save')
+        const delete1 = document.querySelector(".anchors2 .delete")
+        const save1 = document.querySelector('.anchors2 .save')
 
 
         remove.onclick = (m) => {
@@ -218,6 +222,11 @@
                 lowercasecount.style.display = 'none';
                 numbercasecount.style.display = 'none';
                 symbolcasecount.style.display = 'none';
+                isuppercase.checked = false;
+                islowercase.checked = false;
+                isnumbers.checked = false;
+                issymbols.checked = false;
+
 
 
             }
@@ -235,10 +244,10 @@
             }
 
         }
-        delete1.oncick=(e)=>{
+        delete1.oncick = (e) => {
             e.preventDefault()
-            wapper2.style.display="none"
-            wapper.style.display="block"
+            wapper2.style.display = "none"
+            wapper.style.display = "block"
         }
 
 
